@@ -1,0 +1,19 @@
+{% extends "temp_myapp/base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+{% include 'temp_myapp/navbar.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/print.css' %}"> 
+<div class="memo-container">
+    <h1 class= 'memo-header fs-primary fw-bold'>{{ notice_type }}</h1>
+    <p class = 'memo-body fs-medium fw-semi-bold'>{{ memo_text|safe  }}</p>
+</div>
+<script>
+   window.onload = function() {
+        window.print();
+    };
+</script>
+
+{%endblock content%}
